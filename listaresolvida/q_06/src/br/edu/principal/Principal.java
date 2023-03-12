@@ -2,21 +2,17 @@ package br.edu.principal;
 import java.util.Scanner;
 
 public class Principal {
-
 	public static void main(String[] args) {
-		/* Pegará o valor das vendas do usuario e aplicará
-		 * 4% sob esse mesmo valor e acrescentará ao valor 
-		 * do salario
+		/* Calculo do salario base com a gratificação de 5% sob salario base e
+		 * menos 7% sob o salario base
 		 */
 		Scanner sc = new Scanner(System.in);
-		double salario,vendas;
-		System.out.println("Digite o valor do seu salário:");
+		double salario,imposto,grati;
+		System.out.println("Digite o valor de seu salário: ");
 		salario = sc.nextDouble();
-		System.out.println("Digite o valor de suas vendas: ");
-		vendas = sc.nextDouble();
-		double comissao = vendas*0.04;
-		System.out.println("Sua comissão é de: "+(comissao));
-		System.out.println("O valor final do seu salário ficará: "+(salario+comissao));
+		grati = salario*5/100;
+		imposto = salario*7/100;
+		System.out.println("O salário final ficará: "+(salario+grati-imposto));
 	}
 
 }
